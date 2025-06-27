@@ -60,3 +60,34 @@ This project was developed to:
 
 ## 📂 Folder Structure
 
+
+rent4wheels/
+├── main.py # Entry point for the system
+├── models/ # Core domain models
+│ ├── user.py # User class with verification status
+│ ├── vehicle.py # Vehicle class with unique ID & model
+│ └── booking.py # Booking class with confirmation logic
+├── patterns/ # Design pattern implementations
+│ ├── proxy.py # Proxy to restrict booking access
+│ └── observer.py # Observer base and UserObserver class
+├── services/ # Business logic layer
+│ └── booking_service.py # High-level booking flow using Proxy + Observer
+└── utils/ # Utility components
+└── notifier.py # Notification broadcaster for Observer pattern
+
+
+## 📄 Example Code Walkthrough
+
+### ✅ Booking by Verified User
+```python
+user = User("Alice", is_verified=True)
+vehicle = Vehicle("V123", "Toyota Camry")
+process_booking(user, vehicle)
+```
+
+### ❌ Booking by Unverified User
+```python
+user = User("Bob", is_verified=False)
+vehicle = Vehicle("V123", "Toyota Camry")
+process_booking(user, vehicle)
+```

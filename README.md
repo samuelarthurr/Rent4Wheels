@@ -63,17 +63,29 @@ This project was developed to:
 <details> <summary>📁 Click to expand folder structure</summary>
 rent4wheels/
 ├── main.py                         # Entry point for the system
+  
 ├── models/                         # Core domain models
+
 │   ├── user.py                     # User class with verification status
+
 │   ├── vehicle.py                  # Vehicle class with unique ID & model
+
 │   └── booking.py                  # Booking class with confirmation logic
+
 ├── patterns/                       # Design pattern implementations
+
 │   ├── proxy.py                    # Proxy to restrict booking access
+
 │   └── observer.py                 # Observer base and UserObserver class
+
 ├── services/                       # Business logic layer
+
 │   └── booking_service.py         # High-level booking flow using Proxy + Observer
+
 └── utils/                          # Utility components
+
     └── notifier.py                # Notification broadcaster for Observer pattern
+    
 </details>
 
 
